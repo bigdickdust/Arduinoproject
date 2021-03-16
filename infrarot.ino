@@ -1,5 +1,4 @@
 
-const int IR_INPUT_PIN = A0;
 const int IR_LED_PIN = 13;
 void setup(){
     Serial.begin(9600); 
@@ -10,9 +9,9 @@ void setup(){
 
 
 void loop(){
-  int ambient = 0;
-  int lit = 0;
-  int value = 0;
+    int ambient = 0;
+    int lit = 0;
+    int value = 0;
   
      digitalWrite(IR_LED_PIN, LOW);
      delay(5);                           
@@ -26,6 +25,8 @@ void loop(){
   
      Serial.println(value);
 }
+
+
 void initRPR220(int ledPin, int detectorPin){
   
      pinMode(detectorPin, INPUT);
@@ -33,7 +34,7 @@ void initRPR220(int ledPin, int detectorPin){
 }
 
 int readRPR220(int ledPin, int detectorPin){
-int val = 0;
+    int val = 0;
   
      digitalWrite(ledPin, LOW);
      delay(5);
@@ -42,5 +43,6 @@ int val = 0;
      digitalWrite(ledPin, HIGH);
      delay(5);
      val = analogRead(detectorPin) - val;
-return 9000/(val - 12);
+     return 9000/(val - 12);
+     delay(500);
 }
