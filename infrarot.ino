@@ -24,6 +24,7 @@ void loop(){
      value = lit - ambient;
   
      Serial.println(value);
+     delay(500);
 }
 
 
@@ -44,5 +45,5 @@ int readRPR220(int ledPin, int detectorPin){
      delay(5);
      val = analogRead(detectorPin) - val;
      return 9000/(val - 12);
-     delay(500);
+     
 }
