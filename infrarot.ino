@@ -1,4 +1,4 @@
-
+const int IR_INPUT_PIN = A0; 
 const int IR_LED_PIN = 13;
 void setup(){
     Serial.begin(9600); 
