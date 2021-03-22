@@ -81,11 +81,56 @@ int readRPR220(int ledPin, int detectorPin){
  
  
 }
-void einparken(){ 
+void einparken(){  
+ 
+   if (entfernung >= 500 || entfernung <= 0) {
+        Serial.println("Kein Messwert"); 
+    }
+    else 
+    {
+      Serial.print(entfernung); 
+      Serial.println(" cm"); 
+    }
+     delay(10000);
+ 
+ fahren(-45, -20); }       Rückwärts fahren links einschlagen 
+{
+ 
+ if (entfernung >= 500 || entfernung <= 500) {
+        Serial.println("Kein Messwert"); 
+    }
+    else 
+    {
+      Serial.print(entfernung); 
+      Serial.println(" cm"); 
+    }
+     delay(1000);
+fahren(0, -20)}          rückwarts gerade fahren 
+{
+
+if (entfernung >= 0|| entfernung <= 0 ) {
+        Serial.println("Kein Messwert"); 
+    }
+    else 
+    {
+      Serial.print(entfernung);                   Anhalten, stehen 
+      Serial.println(" cm"); 
+    }
+     delay(1000);
+fahren(0, 0)}
+}
+
+ 
+ 
+ 
   
+  
+  
+    
+ }
  
  
-Lenkeinschlag(-45 - 45); 
+
  
  
  
