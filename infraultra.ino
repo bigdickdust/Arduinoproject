@@ -77,6 +77,16 @@ int readRPR220(int ledPin, int detectorPin){
      val = analogRead(detectorPin) - val;
      return 9000/(val - 12);
      
+} void fahren(){              Nicos code 
+ 
+ 
 }
+void einparken(){ 
   
+ 
+ 
+Lenkeinschlag(-45 - 45); 
+ 
+ 
+ 
  
