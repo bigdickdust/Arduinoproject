@@ -7,7 +7,7 @@ long entfernung=0;
 const int IR_INPUT_PIN = A0;
 const int IR_LED_PIN = 13;
 
- void setup() {
+ void setup() { //Ultraschallsensor misst entfernungen 
     Serial.begin (9600); 
     pinMode(trigger, OUTPUT); 
     pinMode(echo, INPUT); 
@@ -16,7 +16,7 @@ const int IR_LED_PIN = 13;
     pinMode(IR_INPUT_PIN, INPUT);
     pinMode(IR_LED_PIN, OUTPUT);
 } 
- int messen (){ 
+ int messen (){         //Töne and und aus machen 
    digitalWrite(trigger, LOW);
    delay(5);
     digitalWrite(trigger, HIGH); 
@@ -37,7 +37,7 @@ const int IR_LED_PIN = 13;
     return entfernung;
  }
 
- void loop()
+ void loop() //ADC und LED Übergang im Übergang 
  { 
   messen();
     int ambient = 0;
@@ -61,11 +61,11 @@ const int IR_LED_PIN = 13;
 
 void initRPR220(int ledPin, int detectorPin){
   
-     pinMode(detectorPin, INPUT);
+     pinMode(detectorPin, INPUT);  //schwarze Materialien unterscheiden können von hellen 
      pinMode(ledPin, OUTPUT);
 }
 
-int readRPR220(int ledPin, int detectorPin){
+int readRPR220(int ledPin, int detectorPin){ //gibt linearisierten Abstand an RPR an die Pins zurück 
     int val = 0;
   
      digitalWrite(ledPin, LOW);
