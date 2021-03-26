@@ -80,7 +80,7 @@ int readRPR220(int ledPin, int detectorPin){ //gibt linearisierten Abstand an RP
  
  
 }
-void einparken(){  
+void einparken(){  //Auto soll Lücke erkennen, vorbei fahren, dann rückwärts einparken 
  
    if (entfernung >= 500 || entfernung <= 0) {
         Serial.println("Kein Messwert"); 
