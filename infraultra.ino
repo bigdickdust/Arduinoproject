@@ -1,4 +1,3 @@
-
 int trigger=7;
 int echo=6;
 long dauer=0;
@@ -93,9 +92,9 @@ void einparken(){
     }
      delay(10000);
  
- fahren(-45, -20); }       //Rückwärts fahren links einschlagen 
-{
- 
+ fahren(-45, -20);       //Rückwärts fahren links einschlagen 
+
+
  if (entfernung >= 500 || entfernung <= 500) {
         Serial.println("Kein Messwert"); 
     }
@@ -105,29 +104,19 @@ void einparken(){
       Serial.println(" cm"); 
     }
      delay(1000);
-fahren(0, -20)}          //rückwarts gerade fahren 
-{
+fahren(0, -20);   //rückwarts gerade fahren 
+
 
 if (entfernung >= 0|| entfernung <= 0 ) {
         Serial.println("Kein Messwert"); 
-    }
+}
     else 
     {
       Serial.print(entfernung);                   //Anhalten, stehen 
       Serial.println(" cm"); 
     }
      delay(1000);
-fahren(0, 0)}
-}
-
- 
- 
- 
-  
-  
-  
-    
- }
+fahren(0, 0);}
  
  
 
