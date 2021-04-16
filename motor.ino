@@ -2,9 +2,12 @@
 int trigger=7;
 int echo=6;
 long dauer=0;
-long entfernung=0;
+long entfernung=0; 
 int motorPin1=2;
 int motorPin2=3;
+const int abstand_linie_auto = 500;
+int entfernung_links = 0;
+int entfernung_rechts = 0;
 
 const int IR_INPUT_PIN = A0;
 const int IR_LED_PIN = 13;
@@ -28,7 +31,7 @@ const int IR_LED_PIN = 13;
     digitalWrite(trigger, LOW);
     dauer = pulseIn(echo, HIGH); 
     entfernung = (dauer/2) * 0.03432; 
-    if (entfernung >= 500 || entfernung <= 0) {
+    if (0 < entfernung < abstand_linie_auto ) {
         Serial.println("Kein Messwert"); 
     }
     else 
@@ -115,7 +118,7 @@ void einparken(){ //Auto soll Lücke erkennen, vorbei fahren, dann rückwärts e
 
   motorStop();                    // Motor Stop
  
-   if (entfernung >= 500 || entfernung <= 0) {
+   if (500 > entfernung > 0 ) {
         Serial.println("Kein Messwert"); 
     }
     else 
@@ -134,7 +137,7 @@ void einparken(){ //Auto soll Lücke erkennen, vorbei fahren, dann rückwärts e
   motorStop();                    // Motor Stop
 
 
- if (entfernung >= 500 || entfernung <= 500) {
+ if (entfernung_links == 500 &&  entfernung_rechts == 500 ) {
         Serial.println("Kein Messwert"); 
     }
     else 
