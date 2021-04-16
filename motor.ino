@@ -1,3 +1,4 @@
+
 int trigger=7;
 int echo=6;
 long dauer=0;
@@ -85,11 +86,14 @@ int readRPR220(int ledPin, int detectorPin){ //gibt linearisierten Abstand an RP
   digitalWrite(motorPin1,LOW);
   digitalWrite(motorPin2,LOW);
   delay(500);
+}
 
-  void motorStop()
+
+  void motorStop(){
   digitalWrite(motorPin1,LOW);
   digitalWrite(motorPin2,LOW);
-  delay(500)
+  delay(500);
+  
 
 
 
@@ -104,7 +108,7 @@ int readRPR220(int ledPin, int detectorPin){ //gibt linearisierten Abstand an RP
  
 
 void einparken(){ //Auto soll Lücke erkennen, vorbei fahren, dann rückwärts einparken 
-  void loop()
+  
   digitalWrite(motorPin1,HIGH);   // Motor Vor
   digitalWrite(motorPin2,LOW);
   delay(1000);
